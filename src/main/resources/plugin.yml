@@ -1,0 +1,10 @@
+name: FirstPlugin
+
+version: '${project.version}'
+
+main: com.andezion.firstplugin.FirstPlugin
+
+api-version: '1.21'
+
+description: A PaperMC plugin that greets players on join and quit
+author: Andezion
