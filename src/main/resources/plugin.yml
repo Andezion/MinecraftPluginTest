@@ -1,10 +1,20 @@
 name: FirstPlugin
-
 version: '${project.version}'
-
 main: com.andezion.firstplugin.FirstPlugin
-
-api-version: '1.21'
-
+api-version: '1.20'
 description: A PaperMC plugin that greets players on join and quit
 author: Andezion
+
+permissions:
+
+  firstplugin.admin:
+    description: Grants the Admin rank (red nametag, all plugin features)
+    default: op
+
+  firstplugin.premium:
+    description: Grants the Premium rank (gold nametag, premium features)
+    default: false
+
+  firstplugin.player:
+    description: Default player rank (white nametag)
+    default: true
