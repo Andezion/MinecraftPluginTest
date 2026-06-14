@@ -5,6 +5,12 @@ api-version: '1.20'
 description: A PaperMC plugin that greets players on join and quit
 author: Andezion
 
+commands:
+  protect:
+    description: Manage block protection
+    usage: /protect [toggle|here|remove]
+    permission: firstplugin.admin
+
 permissions:
 
   firstplugin.admin:
