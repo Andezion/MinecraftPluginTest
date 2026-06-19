@@ -1,5 +1,6 @@
 package com.andezion.firstplugin;
 
+import com.andezion.firstplugin.commands.KillCommand;
 import com.andezion.firstplugin.commands.ProtectCommand;
 import com.andezion.firstplugin.listeners.BlockProtectionListener;
 import com.andezion.firstplugin.listeners.PlayerEventListener;
@@ -23,6 +24,7 @@ public class FirstPlugin extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new BlockProtectionListener(protectionManager), this);
 
         getCommand("protect").setExecutor(new ProtectCommand(protectionManager));
+        getCommand("kill").setExecutor(new KillCommand());
     }
 
     @Override
