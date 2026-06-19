@@ -3,6 +3,7 @@ package com.andezion.firstplugin.listeners;
 import com.andezion.firstplugin.managers.RankManager;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.NamedTextColor;
+import org.bukkit.GameMode;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
@@ -18,7 +19,12 @@ public class PlayerEventListener implements Listener {
 
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
-        rankManager.applyRank(event.getPlayer());
+        var player = event.getPlayer();
+        rankManager.applyRank(player);
+
+        if (player.hasPermission(RankManager.PERM_ADMIN)) {
+            player.setGameMode(GameMode.CREATIVE);
+        }
 
         event.joinMessage(
                 Component.text("Welcome to Andezion's custom server!", NamedTextColor.YELLOW)
