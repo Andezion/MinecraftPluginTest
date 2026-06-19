@@ -10,6 +10,10 @@ commands:
     description: Manage block protection
     usage: /protect [toggle|here|remove]
     permission: firstplugin.admin
+  kill:
+    description: Kill a player by name or UUID
+    usage: /kill <name|uuid>
+    permission: firstplugin.admin
 
 permissions:
 
